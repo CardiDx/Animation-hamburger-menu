@@ -1,0 +1,59 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: white;
+  background-color: #121212;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#checkbox {
+  display: none;
+}
+
+/* ===== Hamburger ===== */
+.hamburger {
+  position: relative;
+  padding: 20px;
+  height: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: greenyellow;
+  border-radius: 999px;
+  transition: transform 0.3s, opacity 0.2s;
+}
+
+.line--top {
+  transform: translateY(-7px);
+}
+
+.line--bottom {
+  transform: translateY(7px);
+}
+
+/* ===== Animate ===== */
+#checkbox:checked ~ .line--top {
+  transform: rotate(45deg);
+}
+
+#checkbox:checked ~ .line--middle {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+#checkbox:checked ~ .line--bottom {
+  transform: rotate(-45deg);
+}
